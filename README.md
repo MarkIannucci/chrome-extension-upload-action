@@ -29,7 +29,7 @@ The target zipped file name.
 
 Publish or not after upload (true / false)
 
-### `publishTarget`
+### `publish-target`
 
 Public ('default') or limited to trusted testers ('trustedTesters') extension visibility
 
@@ -46,5 +46,5 @@ with:
   file-name: './extension.zip'
   app-id: 'xzc12xzc21cx23'
   publish: true
-  publishTarget: 'default'
+  publish-target: 'default'
 ```

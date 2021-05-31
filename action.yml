@@ -22,7 +22,7 @@ inputs:
   publish:
     description: True Or False to publish after upload
     required: true
-  publishTarget:
+  publish-target:
     description: default (public) or trustedTesters extension visibility
     required: true
 runs:
@@ -35,4 +35,4 @@ runs:
     - ${{ inputs.file-name }}
     - ${{ inputs.app-id }}
     - ${{ inputs.publish }}
-    - ${{ inputs.publishTarget }}
+    - ${{ inputs.publish-target }}
