@@ -29,12 +29,16 @@ The target zipped file name.
 
 Publish or not after upload (true / false)
 
+### `publishTarget`
+
+Public ('default') or limited to trusted testers ('trustedTesters') extension visibility
+
 ## Outputs
 
 ## Example usage
 
 ```
-uses: Klemensas/chrome-extension-upload-action@$VERSION
+uses: adunne09/chrome-extension-upload-action@$VERSION
 with:
   refresh-token: 'xxxxxxxxxxxxxxxxxxxxxx'
   client-id: 'xxxxxxxxxxxxx'
@@ -42,4 +46,5 @@ with:
   file-name: './extension.zip'
   app-id: 'xzc12xzc21cx23'
   publish: true
+  publishTarget: 'default'
 ```
