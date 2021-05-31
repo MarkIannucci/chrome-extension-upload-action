@@ -38,7 +38,7 @@ Public ('default') or limited to trusted testers ('trustedTesters') extension vi
 ## Example usage
 
 ```
-uses: adunne09/chrome-extension-upload-action@$VERSION
+uses: adunne09/chrome-extension-upload-action
 with:
   refresh-token: 'xxxxxxxxxxxxxxxxxxxxxx'
   client-id: 'xxxxxxxxxxxxx'
