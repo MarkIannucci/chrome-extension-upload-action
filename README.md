@@ -1,6 +1,6 @@
 # Chrome extension upload
 
-This action uploads the specified ziped chrome extension to the provided app id.
+This action uploads the specified zipped chrome extension to the provided app id.
 It uses the specified refresh token to generate an access token for uploading.
 
 ## Inputs
