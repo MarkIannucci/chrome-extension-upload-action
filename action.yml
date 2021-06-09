@@ -22,9 +22,6 @@ inputs:
   publish:
     description: True Or False to publish after upload
     required: true
-  publish-target:
-    description: default (public) or trustedTesters extension visibility
-    required: true
 runs:
   using: docker
   image: Dockerfile
@@ -35,4 +32,3 @@ runs:
     - ${{ inputs.file-name }}
     - ${{ inputs.app-id }}
     - ${{ inputs.publish }}
-    - ${{ inputs.publish-target }}

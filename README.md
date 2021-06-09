@@ -29,8 +29,11 @@ The target zipped file name.
 
 Publish or not after upload (true / false)
 
+-
+
 ### `publish-target`
 
+** disabled - currently broken, do not use**
 Public ('default') or limited to trusted testers ('trustedTesters') extension visibility
 
 ## Outputs
