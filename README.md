@@ -11,27 +11,27 @@ Your tokens client id
 
 ### `client-secret`
 
-Your tokens client secret
+(Required) Your tokens client secret
 
 ### `refresh-token`
 
-Google developer refresh token
+(Required) Google developer refresh token
 
 ### `app-id`
 
-The target extension id.
+(Required) The target extension id.
 
 ### `file-name`
 
-The target zipped file name.
+(Required) The target zipped file name.
 
 ### `publish`
 
-Publish or not after upload (true / false)
+(Required) Publish or not after upload (true / false)
 
 ### `publish-target`
 
-Public ('default') or limited to trusted testers ('trustedTesters') extension visibility
+(Optional) Specify extension visibility > defaults to private, option 1 - default (public), option 2 - trustedTesters (private)
 
 ## Outputs
 

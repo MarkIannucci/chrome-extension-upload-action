@@ -1,30 +1,32 @@
 name: Chrome Extension upload & publish
-description: Action for uploading chrome extensions
+description: Action for uploading Chrome extensions to Chrome Store
+author: Provide Platform
 branding:
   icon: upload-cloud
   color: green
 inputs:
   refresh-token:
-    description: Auth refresh token
+    description: (Required) Auth refresh token
     required: true
   app-id:
-    description: Extension application target id
+    description: (Required) Extension application target id
     required: true
   client-id:
-    description: Token client id
+    description: (Required) Token client id
     required: true
   client-secret:
-    description: Token client secret
+    description: (Required) Token client secret
     required: true
   file-name:
-    description: Name of zipped target upload file
+    description: (Required) Name of zipped target upload file
     required: true
   publish:
-    description: True Or False to publish after upload
+    description: (Required) true Or false to publish after upload
     required: true
   publish-target:
-    description: default (public) or trustedTesters extension visibility
-    required: true
+    description: (Optional) Specify extension visibility > defaults to trustedTesters, option 1 - default (public), option 2 - trustedTesters (private)
+    default: trustedTesters
+    required: false
 runs:
   using: docker
   image: Dockerfile
