@@ -2,6 +2,7 @@
 
 set -e
 
+echo get token
 token=`curl \
 --silent \
 --fail \
@@ -17,6 +18,7 @@ token=`curl \
 | \
 jq -r '.access_token'`
 
+echo upload file
 status=`curl \
 --silent \
 --show-error \
@@ -26,8 +28,7 @@ status=`curl \
 -X PUT \
 -T $4 \
 -v https://www.googleapis.com/upload/chromewebstore/v1.1/items/$5 \
-| \
-jq -r '.uploadState'`
+| tee status.json | jq -r '.uploadState'`
 
 if [ $status == 'FAILURE' ]
 then
@@ -36,6 +37,7 @@ fi
 
 if [ $6 == true ] #publish
 then
+  echo publish
   publish=`curl \
   --silent \
   --show-error \
@@ -43,11 +45,9 @@ then
   -H "Authorization: Bearer $token" \
   -H "x-goog-api-version: 2" \
   -X POST \
-  -T $4 \
-  -v https://www.googleapis.com/upload/chromewebstore/v1.1/items/$5/publish \
-  -d publishTarget=$7 \
-  | \
-  jq -r '.publishState'`
+  -v https://www.googleapis.com/chromewebstore/v1.1/items/$5/publish \
+  -d publishTarget="$7" \
+  | tee publish.json | jq -r '.publishState'` 
 
   if [ $publish == 'FAILURE' ]
   then
