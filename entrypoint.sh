@@ -1,5 +1,6 @@
 #!/bin/sh
 
+set -e
 
 token=`curl \
 --silent \
