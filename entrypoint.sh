@@ -17,7 +17,7 @@ token=`curl \
 | \
 jq -r '.access_token'`
 
-status=`curl \
+statusjson=`curl \
 --silent \
 --show-error \
 --fail \
@@ -25,10 +25,12 @@ status=`curl \
 -H "x-goog-api-version: 2" \
 -X PUT \
 -T $4 \
--v https://www.googleapis.com/upload/chromewebstore/v1.1/items/$5 \
-| \
-jq -r '.uploadState'`
+-v https://www.googleapis.com/upload/chromewebstore/v1.1/items/$5 
 
+echo $statusjson
+status= $statusjson | jq -r '.uploadState'`
+
+echo $status
 if [ $status == 'FAILURE' ]
 then
   exit 1
@@ -36,7 +38,7 @@ fi
 
 if [ $6 == true ] #publish
 then
-  publish=`curl \
+  publishjson=`curl \
   --silent \
   --show-error \
   --fail \
@@ -44,10 +46,11 @@ then
   -H "x-goog-api-version: 2" \
   -X POST \
   -v https://www.googleapis.com/chromewebstore/v1.1/items/$5/publish \
-  -d publishTarget=$7 \
-  | \
-  jq -r '.publishState'`
-
+  -d publishTarget=$7 
+  
+  echo $publishjson
+  publish= $publishjson | jq -r '.publishState'`
+  
   if [ $publish == 'FAILURE' ]
   then
     exit 1
