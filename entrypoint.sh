@@ -26,8 +26,7 @@ status=`curl \
 -X PUT \
 -T $4 \
 -v https://www.googleapis.com/upload/chromewebstore/v1.1/items/$5 \
-| \
-jq -r '.uploadState'`
+| tee >( jq -r '.uploadState'`)
 
 if [ $status == 'FAILURE' ]
 then
@@ -46,8 +45,7 @@ then
   -T $4 \
   -v https://www.googleapis.com/upload/chromewebstore/v1.1/items/$5/publish \
   -d publishTarget=$7 \
-  | \
-  jq -r '.publishState'`
+  | tee >( jq -r '.publishState'` )
 
   if [ $publish == 'FAILURE' ]
   then
