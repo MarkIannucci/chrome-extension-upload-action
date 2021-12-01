@@ -2,6 +2,7 @@
 
 set -e
 
+echo get token
 token=`curl \
 --silent \
 --fail \
@@ -17,6 +18,7 @@ token=`curl \
 | \
 jq -r '.access_token'`
 
+echo upload file
 status=`curl \
 --silent \
 --show-error \
@@ -35,6 +37,7 @@ fi
 
 if [ $6 == true ] #publish
 then
+  echo publish
   publish=`curl \
   --silent \
   --show-error \
