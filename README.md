@@ -38,7 +38,7 @@ Your tokens client id
 ## Example usage
 
 ```
-uses: adunne09/chrome-extension-upload-action
+uses: markiannucci/chrome-extension-upload-action
 with:
   refresh-token: 'xxxxxxxxxxxxxxxxxxxxxx'
   client-id: 'xxxxxxxxxxxxx'
